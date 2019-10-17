@@ -11,16 +11,6 @@ class Person {
     }
 }
 
-// STUDENTS
-class Students extends Person {
-    constructor(studentsAttr) {
-        super(studentsAttr);
-        this.previousBackground = studentsAttr.previousBackground;
-        this.className = studentsAttr.className;
-        this.favSubjects = studentsAttr.favSubjects;
-    } // methods
-}
-
 // INSTRUCTOR
 class Instructors extends Person {
     constructor(instructorsAttr) {
@@ -31,10 +21,21 @@ class Instructors extends Person {
     } // method
     demo(subject) {
         return `Today we are learning about ${subject}.`;
+
     }
-    grade(Students) {
+    grade(Students, subject) {
         return `${Students.name} receives a perfect score on ${subject}.`;
     }
+}
+
+// STUDENTS
+class Students extends Person {
+    constructor(studentsAttr) {
+        super(studentsAttr);
+        this.previousBackground = studentsAttr.previousBackground;
+        this.className = studentsAttr.className;
+        this.favSubjects = studentsAttr.favSubjects;
+    } // methods
 }
 
 // PM
@@ -47,7 +48,7 @@ class ProjectManager extends Instructors {
     standUp(slackChannel) {
         return `${this.name} announces ${slackChannel}, @channel standup time!`;
     }
-    debugsCode(Students) {
+    debugsCode(Students, subject) {
         return `${this.name} debugs ${Students.name}'s code on ${subject}`;
     }
 }
@@ -74,6 +75,12 @@ let molly = new Instructors({
     catchPhrase: `Want some?`,
 });
 
+let jolly = new ProjectManager({
+
+});
+
 
 console.log(lukas.speak());
-console.log(molly.grade())
+console.log(molly.demo(`JavaScript-4`));
+console.log(molly.grade(lukas, `JavaScript-4`));
+console.log(`Instructor ${molly.name}'s favorite language is ${molly.favLanguage} and her catch phrase is ${molly.catchPhrase}. Her specialty is ${molly.specialty}`);
