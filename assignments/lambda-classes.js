@@ -37,7 +37,9 @@ class Students extends Person {
         this.favSubjects = studentsAttr.favSubjects; 
     } // methods
     listsSubjects() {
-        return `${this.favSubjects}`;
+         this.favSubjects.forEach(element => {
+            console.log(element);
+        });
     }
     PRAssignment(subject) {
         return `${this.name} has submitted a PR for ${subject}`;
@@ -67,11 +69,7 @@ let lukas = new Students({
     location: `Palm Coast`,
     age: 25,
     className: `WEB25`,
-    favSubjects: [
-        `HTML`,
-        ` CSS`,
-        ` JavaScript`
-    ],
+    favSubjects: [`HTML`,`CSS`,`JavaScript`],
     previousBackground: `HTML/CSS/JS`,
 });
 
@@ -96,10 +94,9 @@ console.log(lukas.speak());
 console.log(molly.demo(`JavaScript-4`));
 console.log(molly.grade(lukas, `JavaScript-4`));
 console.log(`Instructor ${molly.name}'s favorite language is ${molly.favLanguage} and her catch phrase is ${molly.catchPhrase}. Her specialty is ${molly.specialty}`);
-console.log(lukas.listsSubjects());
+lukas.listsSubjects();
 console.log(lukas.PRAssignment(`JavaScript-4`));
 console.log(lukas.sprintChallenge(`JavaScript-4`));
 console.log(jolly.standUp(`https://app.slack.com`));
 console.log(jolly.debugsCode(lukas, `JavaScript-4`));
 console.log(`${jolly.name}'s favorite instructor is ${jolly.favInstructor} who has ${molly.catchPhrase} as a catch phrase.`);
-console.log(Students.grade);
