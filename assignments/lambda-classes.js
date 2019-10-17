@@ -34,7 +34,7 @@ class Students extends Person {
         super(studentsAttr);
         this.previousBackground = studentsAttr.previousBackground;
         this.className = studentsAttr.className;
-        this.favSubjects = studentsAttr.favSubjects;
+        this.favSubjects = studentsAttr.favSubjects; 
     } // methods
     listsSubjects() {
         return `${this.favSubjects}`;
@@ -102,3 +102,4 @@ console.log(lukas.sprintChallenge(`JavaScript-4`));
 console.log(jolly.standUp(`https://app.slack.com`));
 console.log(jolly.debugsCode(lukas, `JavaScript-4`));
 console.log(`${jolly.name}'s favorite instructor is ${jolly.favInstructor} who has ${molly.catchPhrase} as a catch phrase.`);
+console.log(Students.grade);
